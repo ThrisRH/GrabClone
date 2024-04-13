@@ -1,0 +1,108 @@
+$graycolor: #676767;
+$whiteAlpha: #f0efef;
+$greencolor: #00B14F;
+
+
+.SeeAllPromotions{
+    height: 40px;
+    width: 1220px;
+    border:1px solid $graycolor;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: $graycolor;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.SeeAllPromotions:hover{
+    border:1px solid $greencolor;
+    color: $greencolor;
+}
+
+.FooterContainer{
+    background: $greencolor;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    
+    .FooterContent{
+        height: 100%; 
+        width: 1220px;
+        
+        .appLogo{
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.selectBox{
+    width: 30%;
+    padding: 10px;
+    border: 1px solid $whiteAlpha;
+    border-radius: 5px;
+}
+.selectBox:hover{
+    border: 1px solid $greencolor;
+}
+.selectBox:focus-within{
+    border: 1px solid $greencolor;
+}
+.selectBox:focus-visible{
+    border: 1px solid $greencolor;
+}
+
+.no-scroll {
+    overflow: hidden;
+  }
+  .DishesCard{
+    border: solid 1px white;
+  }
+  .DishesCard:hover{
+    border: #00B14F 1px solid;
+  }
+  .OptionInput{
+    border: #676767 solid 1px;
+    outline: none;
+    transition: all 0.3s;
+  }
+  .OptionInput:hover{
+    border: #00B14F 1px solid;
+  }
+  .OptionInput:focus-within{
+    border: #00B14F 2px solid;
+  }
+
+  .addToBasketBtn{
+    background: $greencolor;
+    border: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .addToBasketBtn:hover{
+    background: rgba(0, 177, 79, 0.9);
+  }
+
+  .cancel{
+    background: #ee6352;
+    border: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .cancel:hover{
+    background: rgba(238, 99, 82, 0.9);
+  }
