@@ -5,8 +5,8 @@ const CateItem = ({ CateImage, CateName }) => {
   return (
     <>
       <Box>
-        <Image w={"273px"} src={CateImage} borderRadius={5} />
-        <Text fontSize={16} fontWeight={"bold"} mt={10}>
+        <Image w={"100%"} src={CateImage} borderRadius={5} />
+        <Text fontSize={"100%"} fontWeight={"bold"}>
           {CateName}
         </Text>
       </Box>

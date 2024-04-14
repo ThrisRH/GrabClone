@@ -2,6 +2,11 @@ $graycolor: #676767;
 $whiteAlpha: #f0efef;
 $greencolor: #00B14F;
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
 
 .SeeAllPromotions{
     height: 40px;
@@ -16,10 +21,13 @@ $greencolor: #00B14F;
     transition: all 0.3s ease;
     box-sizing: border-box;
     border-radius: 5px;
+    
+    width: 100%;
 }
 .SeeAllPromotions:hover{
     border:1px solid $greencolor;
     color: $greencolor;
+    width: 100%;
 }
 
 .FooterContainer{
@@ -31,7 +39,7 @@ $greencolor: #00B14F;
     
     .FooterContent{
         height: 100%; 
-        width: 1220px;
+        width: 60%;
         
         .appLogo{
             width: 100px;
@@ -78,7 +86,7 @@ $greencolor: #00B14F;
   }
 
   .addToBasketBtn{
-    background: $greencolor;
+    background: #00B14F;
     border: transparent;
     color: white;
     font-size: 18px;

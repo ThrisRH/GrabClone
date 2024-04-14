@@ -42,17 +42,22 @@ const SliderPromote = () => {
   return (
     <>
       <Box style={{ position: "relative" }}>
-        <Swiper slidesPerView={4} ref={swiperRef} onSlideChange={onSlideChange}>
+        <Swiper
+          spaceBetween={20} // Khoảng cách giữa các slide
+          slidesPerView={1} // Số slide hiển thị mặc định
+          breakpoints={{
+            // Định nghĩa breakpoints và số lượng slide tương ứng
+            768: {
+              slidesPerView: 4, // Số slide hiển thị ở breakpoint md và lớn hơn
+            },
+          }}
+          ref={swiperRef}
+          onSlideChange={onSlideChange}
+        >
           {data.QuanAnData.map((item, index) => {
             if (item.Promote !== undefined) {
               return (
-                <SwiperSlide
-                  style={{
-                    maxWidth: "280px",
-                    minWidth: "280px",
-                    padding: "0px 12px 24px 12px",
-                  }}
-                >
+                <SwiperSlide>
                   <QuanAn
                     ImageLink={item.ImageLink}
                     TenQuanAn={item.TenQuanAn}

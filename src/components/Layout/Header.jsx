@@ -26,7 +26,7 @@ export default function Header({ children }) {
 
   return (
     <>
-      <Box height={81} position={"relative"}>
+      <Box height={"100px"} position={"relative"}>
         <Flex
           className={
             HeaderContainer ? "HeaderContainer active" : "HeaderContainer"
@@ -34,38 +34,41 @@ export default function Header({ children }) {
         >
           <Flex
             boxSizing={"border-box"}
-            width={"1220px"}
-            p={"12px 0px"}
+            width={{ sm: "100%", md: "60%" }}
+            p={{ sm: "12px 15px", md: "12px 0px" }}
             justifyContent={"space-between"}
             alignItems={"center"}
           >
             {/* Left Logo */}
-            <Box>
+            <Box w={"60%"}>
               <Link to="/">
                 <Image
                   src={srcImage}
                   alt="WebLogo"
-                  width={150}
+                  width={"120px"}
                   objectFit={"cover"}
                   cursor={"pointer"}
                 />
               </Link>
             </Box>
-            <Flex gap={10}>
-              <Flex className="navItem">
-                <Image
-                  src="https://food.grab.com/static/images/icons/icon-cart-default-black.svg"
-                  width={16}
-                  height={16}
-                />
+            {/* Right Items */}
+            <Flex gap={2} w={"40%"} justifyContent={"flex-end"}>
+              <Flex
+                className="navItem"
+                w={"20%"}
+                display={{ base: "none", md: "flex" }}
+              >
+                <Image src="https://food.grab.com/static/images/icons/icon-cart-default-black.svg" />
               </Flex>
-              <Flex className="navItem">
-                <Text fontSize={12} color={"#676767"}>
+              <Flex className="navItem" w={{ base: "70%", md: "40%" }}>
+                <Text fontSize={"60%"} color={"#676767"}>
                   Đăng nhập/Đăng ký
                 </Text>
               </Flex>
-              <Flex className="navItem" gap={5}>
-                <Text color={"#676767"}>VI </Text>
+              <Flex className="navItem" gap={2} w={{ base: " 30%", md: "20%" }}>
+                <Text color={"#676767"} fontSize={12}>
+                  VI
+                </Text>
                 <span>
                   <FontAwesomeIcon
                     icon={faChevronDown}

@@ -19,12 +19,13 @@ const QuanAn = ({
   return (
     <>
       <Box className="ItemBox" cursor={"pointer"} onClick={onClickRestaurant}>
-        <VStack alignItems={"flex-start"} minW={280} maxW={280} maxH={300}>
+        <VStack alignItems={"flex-start"}>
           {/* Restaurant Image */}
           <Flex position={"relative"}>
-            <Image src={ImageLink} w={280} borderRadius={6} />
+            <Image src={ImageLink} w={"100%"} borderRadius={6} />
             {Promote != null ? (
               <Text
+                top={"10%"}
                 bgColor={"#00b14f"}
                 zIndex={2}
                 position={"absolute"}
@@ -39,41 +40,57 @@ const QuanAn = ({
           </Flex>
 
           {/* Restaurant Info */}
-          <Box className="RestaurantInfo" maxW={280} minW={280}>
-            <Text fontWeight={"bold"} fontSize={16} mt={5}>
+          <Box className="RestaurantInfo" w={"100%"} alignItems={"flex-end"}>
+            <Text fontWeight={"bold"} fontSize={16} mt={"2%"} height={"50px"}>
               {TenQuanAn}
             </Text>
             <Text fontSize={12} fontWeight={400} m={0}>
               {MonAnTieuBieu}
             </Text>
 
-            <Flex gap={10} m={0} mt={5} fontSize={14} color={"gray"}>
+            <Flex m={0} mt={5} fontSize={12} color={"gray"} w={"100%"}>
               {Rate != null ? (
-                <Flex alignItems={"center"}>
-                  <Box display={"flex"} gap={5} m={0} alignItems={"center"}>
+                <Flex alignItems={"center"} w={"30%"}>
+                  <Box
+                    display={"flex"}
+                    gap={2}
+                    m={0}
+                    alignItems={"center"}
+                    w={"40%"}
+                  >
                     <Image
-                      w={14}
+                      w={"auto"}
                       m={0}
                       src="https://food.grab.com/static/images/icons/icon-star.svg"
                     />
-                    <Text m={0}>{Rate}</Text>
                   </Box>
+
+                  <Text w={"70%"}>{Rate}</Text>
                 </Flex>
               ) : null}
-              <Box m={0} display={"flex"} gap={5} alignItems={"center"}>
+              <Box
+                m={0}
+                display={"flex"}
+                gap={5}
+                alignItems={"center"}
+                w={"70%"}
+              >
                 {/* Timing check */}
                 {Time != null ? (
-                  <Flex alignItems={"center"} justifyContent={"center"} gap={5}>
+                  <Flex
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    gap={2}
+                    w={"auto"}
+                  >
                     <Image
-                      w={14}
+                      w={"auto"}
                       m={0}
                       src="https://food.grab.com/static/images/icons/icon-clock.svg"
                     />
 
                     <Text m={0}>{Time} phút</Text>
-                    {(Time && Distance) != null ? (
-                      <Text m={0}>&nbsp;&nbsp;•&nbsp;&nbsp;</Text>
-                    ) : null}
+                    {(Time && Distance) != null ? <Text m={0}>•</Text> : null}
                   </Flex>
                 ) : null}
 
@@ -82,23 +99,25 @@ const QuanAn = ({
               </Box>
             </Flex>
             {/* Promote Check */}
-            {Promote != null ? (
-              <Flex m={0} justifyContent={"center"} mt={15} gap={10}>
-                <Image
-                  src="https://food.grab.com/static/images/icons/icon-promo-tag.svg"
-                  w={20}
-                />
-                <Text
-                  m={0}
-                  fontSize={14}
-                  color={"gray"}
-                  overflow="hidden"
-                  textOverflow="ellipsis"
-                >
-                  {Promote}
-                </Text>
-              </Flex>
-            ) : null}
+            <Flex w={"100%"} justifyContent={"flex-end"}>
+              {Promote != null ? (
+                <Flex m={0} justifyContent={"center"} mt={15} gap={2} w={"70%"}>
+                  <Image
+                    src="https://food.grab.com/static/images/icons/icon-promo-tag.svg"
+                    w={"auto"}
+                  />
+                  <Text
+                    m={0}
+                    fontSize={14}
+                    color={"gray"}
+                    overflow="hidden"
+                    textOverflow="ellipsis"
+                  >
+                    {Promote}
+                  </Text>
+                </Flex>
+              ) : null}
+            </Flex>
           </Box>
         </VStack>
       </Box>

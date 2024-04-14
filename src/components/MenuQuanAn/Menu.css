@@ -1,0 +1,23 @@
+.addToBasketBtn{
+    background: #00B14F;
+    border: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .addToBasketBtn:hover{
+    background: rgba(0, 177, 79, 0.9);
+  }
+
+  .cancel{
+    background: #ee6352;
+    border: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .cancel:hover{
+    background: rgba(238, 99, 82, 0.9);
+  }

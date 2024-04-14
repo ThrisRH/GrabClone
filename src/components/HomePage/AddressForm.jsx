@@ -18,13 +18,12 @@ const AddressForm = ({ onSearchClick }) => {
     <Flex
       className="FormContainer"
       width={"100%"}
-      padding={5}
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Box className="Form" zIndex={100} position={"relative"} width={"1220px"}>
+      <Box className="Form" zIndex={100} position={"relative"} width={"100%"}>
         <VStack
-          width={360}
+          width={{ base: "100%", md: "40%" }}
           gap={10}
           padding={"40px 24px"}
           fontWeight={"bold"}
@@ -34,15 +33,15 @@ const AddressForm = ({ onSearchClick }) => {
           border={"1px solid #f0efef"}
         >
           <Text fontSize={20}>Good Evening</Text>
-          <Text fontSize={40}> Where should we deliver your food today?</Text>
+          <Text fontSize={30}> Where should we deliver your food today?</Text>
 
-          <Flex className="addressArea">
-            <Box fontSize={25}>
+          <Flex className="addressArea" w={"100%"}>
+            <Flex fontSize={25} w={"20%"} justifyContent={"center"}>
               <FontAwesomeIcon
                 icon={faLocationPin}
                 style={{ color: "#ee2b2b" }}
               />
-            </Box>
+            </Flex>
             <Box height={25} w={"60%"}>
               <input
                 style={{ width: "100%", border: "none", outline: "none" }}
@@ -51,10 +50,10 @@ const AddressForm = ({ onSearchClick }) => {
                 onChange={(e) => setInputValue(e.target.value)}
               />
             </Box>
-            <Box>
+            <Box w={"20%"}>
               <Image
                 src="https://food.grab.com/static/images/icons/icon-geo-button.svg"
-                w={30}
+                w={"100%"}
                 h={30}
               />
             </Box>

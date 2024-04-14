@@ -8,22 +8,36 @@ const NearestRestaurantsToYou = () => {
   return (
     <div className="NearestRestaurants">
       <Box>
-        <Flex p={"0px 12px"}>
-          <Text fontWeight={"bold"} fontSize={30} m={0} mb={20}>
+        <Flex mt={10} w={"100%"} mb={5}>
+          <Text
+            display={{ base: "none", md: "block" }}
+            fontWeight={"bold"}
+            fontSize={{ base: 12, md: 30 }}
+            m={0}
+            w={"auto"}
+          >
             Quán ăn tại
           </Text>
           <Text
             fontWeight={"bold"}
-            fontSize={30}
+            fontSize={{ base: 20, md: 30 }}
+            w={"80%"}
             m={0}
-            p={"0px 12px"}
+            p={{ base: 0, md: "0px 12px" }}
             color={"#00b14f"}
+            whiteSpace={"nowrap"}
+            overflow="hidden"
+            textOverflow="ellipsis"
           >
             61 Nguyễn Bình, X.Phú Xuân, H.Nhà Bè, Hồ Chí Minh
           </Text>
         </Flex>
-        <Box p={"0px 12px"}>
-          <SimpleGrid minChildWidth={280} spacing={20}>
+        <Box>
+          <SimpleGrid
+            columns={{ base: 1, md: 3, lg: 4 }}
+            spacingX="1%"
+            spacingY="50px"
+          >
             {data.QuanAnData.map((item, index) => {
               return (
                 <Box>

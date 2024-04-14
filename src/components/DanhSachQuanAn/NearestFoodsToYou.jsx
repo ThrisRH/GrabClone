@@ -6,7 +6,7 @@ const NearestFoodsToYou = () => {
   return (
     <div className="NearestFoods">
       <Box>
-        <Text fontWeight={"bold"} fontSize={30} m={0} mb={20} p={"0px 12px"}>
+        <Text fontWeight={"bold"} fontSize={30} m={0} mb={5}>
           Món ngon gần bạn
         </Text>
         <Box>

@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Flex, Image, VStack, Text, HStack } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Image,
+  VStack,
+  Text,
+  HStack,
+  Center,
+} from "@chakra-ui/react";
 import combo from "./ComboData";
 
 const ComboFood = ({ onClickDishes }) => {
@@ -9,35 +17,37 @@ const ComboFood = ({ onClickDishes }) => {
         return (
           <Flex
             className="DishesCard comboCard"
-            gap={20}
-            minH={190}
+            gap={5}
             padding={15}
             bg={"white"}
             borderRadius={5}
             cursor={"pointer"}
             onClick={() => onClickDishes(item)}
+            w={"100%"}
           >
-            <Box>
-              <Image src={item.comboImage} w={100}></Image>
+            <Box w={{ sm: "10%", xl: "40%" }}>
+              <Image src={item.comboImage} w={"100%"}></Image>
             </Box>
-            <VStack alignItems={"flex-start"} justifyContent={"space-between"}>
+            <VStack
+              w={{ sm: "90%", xl: "60%" }}
+              alignItems={"flex-start"}
+              justifyContent={"space-between"}
+            >
               <Box>
-                <Text fontSize={18} height={40}>
-                  {item.comboName}
-                </Text>
-                <Text fontSize={14} mt={20} color={"#676767"} h={"auto"}>
+                <Text fontSize={18}>{item.comboName}</Text>
+                <Text fontSize={14} mt={5} color={"#676767"} h={"auto"}>
                   {item.comboDescribe}
                 </Text>
               </Box>
               {/* Saving */}
-              <HStack w={"100%"} mt={20} h={30} alignItems={"flex-end"}>
+              <HStack w={"100%"} mt={5} alignItems={"flex-end"}>
                 <Flex w={"80%"} flexDir={"column"}>
-                  <Flex gap={10} mt={20}>
+                  <Flex gap={2} w={"100%"} alignItems={"center"}>
                     <Text
                       color={"#f38621"}
                       bg={"rgba(243,134,33,.3)"}
-                      p={"0px 5px"}
-                      fontSize={12}
+                      p={"5px"}
+                      fontSize={10}
                     >
                       {item.comboSale}
                     </Text>
@@ -50,19 +60,32 @@ const ComboFood = ({ onClickDishes }) => {
                     </Text>
                   </Flex>
 
-                  <Text>{item.comboPrice}</Text>
+                  <Text>
+                    {item.comboPrice.toLocaleString("vi-VN", {
+                      style: "currency",
+                      currency: "VND",
+                    })}
+                  </Text>
                 </Flex>
-                <Box
-                  height={"30px"}
-                  w={"13%"}
-                  bg={"#00B14F"}
-                  borderRadius={100}
+                <Flex
+                  w={"20%"}
+                  justifyContent={"flex-end"}
+                  alignItems={"center"}
                 >
-                  <Image
-                    w={30}
-                    src="https://food.grab.com/static/images/quick-add/plus-white.svg"
-                  />
-                </Box>
+                  <Flex
+                    w={"32px"}
+                    h={"30px"}
+                    bg={"#00B14F"}
+                    borderRadius={100}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                  >
+                    <Image
+                      w={30}
+                      src="https://food.grab.com/static/images/quick-add/plus-white.svg"
+                    />
+                  </Flex>
+                </Flex>
               </HStack>
             </VStack>
           </Flex>
